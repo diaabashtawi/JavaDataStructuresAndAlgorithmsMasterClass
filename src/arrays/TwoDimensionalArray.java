@@ -26,5 +26,14 @@ public class TwoDimensionalArray {
         }
     }
 
+    public void accessArrayCell(int row, int column){
+        System.out.println("Accessing Row number :" + row + " Column number : " + column);
+        try {
+            System.out.println("Cell value in (Row number " + row + " and Column number " + column +") is : " + array[row][column]);
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid Index " + e.getMessage());
+        }
+    }
+
 
 }
