@@ -35,5 +35,37 @@ public class TwoDimensionalArray {
         }
     }
 
+    public void traverseTwoDimensionalArray(){
+        for (int row = 0; row < array.length; row++){
+            for (int col =0; col<array[row].length; col++){
+                System.out.print(array[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void sreachElement(int value){
+        for (int row =0; row<array.length; row++){
+            for (int col = 0; col<array[row].length; col++){
+                if (array[row][col] == value){
+                    System.out.println("Element Found at Row : " + row + " Column " + col);
+                }
+            }
+        }
+        System.out.println("Element NOT FOUND!!");
+    }
+
+    public void deleteElement(int row, int col){
+        try {
+            array[col][col] = Integer.MIN_VALUE;
+            System.out.println("Element : " + array[row][col] + "Successfully Deleted ");
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid array index " + e.getMessage());
+        }
+    }
+
+
+
+
 
 }
