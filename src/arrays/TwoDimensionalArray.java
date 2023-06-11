@@ -4,68 +4,62 @@ public class TwoDimensionalArray {
 
     int [][] array = null;
 
-    public TwoDimensionalArray(int rows, int columns) {
-        this.array = new int[rows][columns];
-        for (int row = 0; row < array.length; row++){
-            for (int column = 0; column < array[row].length; column++){
-                array[row][column] = Integer.MIN_VALUE;
+    public TwoDimensionalArray(int numberOfRows, int numberOfColumns) {
+        this.array = new int[numberOfRows][numberOfColumns];
+        for (int row = 0; row < array.length; row++) {
+            for (int col = 0; col < array[0].length; col++) {
+                array[row][col] = Integer.MIN_VALUE;
             }
         }
     }
 
-    public void insertElement(int row, int column, int value){
+    public void insertElement(int row, int col, int value){
         try {
-            if (array[row][column] == Integer.MIN_VALUE){
-                array[row][column] = value;
-                System.out.println("Element Inserted Successfully");
-            }else {
-                System.out.println("Date NOT Inserted, index is already occupied");
+            if (array[row][col] == Integer.MIN_VALUE){
+                array[row][col] = value;
+                System.out.println("The Value has been successsfully inserted");
             }
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Invalid Index " + e.getMessage());
+        }catch (ArrayIndexOutOfBoundsException exception){
+            System.out.println("Invalid Index");
         }
     }
 
-    public void accessArrayCell(int row, int column){
-        System.out.println("Accessing Row number :" + row + " Column number : " + column);
+    public void accessArrayCell(int row, int col){
+        System.out.println("Accessing Row " + row + " Column " + col);
         try {
-            System.out.println("Cell value in (Row number " + row + " and Column number " + column +") is : " + array[row][column]);
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Invalid Index " + e.getMessage());
+            System.out.println("Cell value is : " + array[row][col]);
+        }catch (ArrayIndexOutOfBoundsException exception){
+            System.out.println("Invalid Index");
         }
     }
 
-    public void traverseTwoDimensionalArray(){
-        for (int row = 0; row < array.length; row++){
-            for (int col =0; col<array[row].length; col++){
-                System.out.print(array[row][col] + " ");
+    public void traverse2DArray(){
+        for (int row = 0; row < array.length; row++) {
+            for (int col = 0; col < row; col++) {
+                System.out.println(array[row][col]);
             }
             System.out.println();
         }
     }
 
-    public void sreachElement(int value){
-        for (int row =0; row<array.length; row++){
-            for (int col = 0; col<array[row].length; col++){
+    public void searchingValue(int value){
+        for (int row = 0; row < array.length; row++) {
+            for (int col = 0; col < array[row].length; col++) {
                 if (array[row][col] == value){
-                    System.out.println("Element Found at Row : " + row + " Column " + col);
+                    System.out.println("Value Found at Row : " + row + " Column " + col);
                 }
             }
         }
-        System.out.println("Element NOT FOUND!!");
+        System.out.println("Value is NOT FOUND");
     }
 
-    public void deleteElement(int row, int col){
+    public void deleteValuefromArray(int row, int col){
         try {
-            array[col][col] = Integer.MIN_VALUE;
-            System.out.println("Element : " + array[row][col] + "Successfully Deleted ");
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Invalid array index " + e.getMessage());
+            System.out.println("Value has been Successfully Deleted");
+            array[row][col] = Integer.MIN_VALUE;
+        }catch (ArrayIndexOutOfBoundsException exception){
+            System.out.println("Invalid Index");
         }
     }
-
-
-
-
 
 }

@@ -29,6 +29,7 @@ public class ArrayMainApp {
         System.out.println("-----------------------Two Dimension Array Section start -----------------------------");
         TwoDimensionalArray twoDimensionalArray =
                 new TwoDimensionalArray(3, 3);
+
         twoDimensionalArray.insertElement(0, 0, 1024);
         twoDimensionalArray.insertElement(0, 1, 2048);
         twoDimensionalArray.accessArrayCell(0, 1);
