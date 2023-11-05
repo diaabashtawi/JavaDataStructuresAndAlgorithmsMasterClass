@@ -7,7 +7,7 @@ public class MaxProduct {
     public static void main(String[] args) {
         MaxProduct maxProduct = new MaxProduct();
         int [] intArrray = {10, 60, 30, 40, 50};
-        String pairs = maxProduct.maxProduct(intArrray);
+        String pairs = maxProduct(intArrray);
         System.out.println(pairs);
     }
 
