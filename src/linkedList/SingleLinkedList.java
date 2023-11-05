@@ -38,7 +38,11 @@ public class SingleLinkedList {
                 tempNode = tempNode.next;
                 index++;
             }
+            Node nextNode = tempNode.next;
+            tempNode.next = nextNode;
+            node.next = nextNode;
         }
+        size++;
     }
 
     // Single Linked List Traversal
@@ -48,11 +52,11 @@ public class SingleLinkedList {
         }else {
             Node tempNode = head;
             for (int i = 0; i < size; i++) {
-                System.out.println(tempNode.value);
-                if (i != size -1){
-                    System.out.println("-->");
+                System.out.print(tempNode.value);
+                if (i != size - 1){
+                    System.out.print(" --> ");
                 }
-                tempNode =tempNode.next;
+                tempNode = tempNode.next;
             }
         }
         System.out.println("\n");
